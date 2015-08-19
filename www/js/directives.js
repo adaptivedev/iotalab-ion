@@ -20,7 +20,7 @@ angular.module('starter.directives')
       templateUrl: 'templates/il-device.tpl.html',
       controller: function($scope) {
         $scope.comps = deviceService.getComps();
-        $scope.addComp = function(compIndex, thePin){
+        $scope.addComp = function(compIndex, thePin) {
           deviceService.addComp(compIndex, thePin, myDeviceIndex);
         };
       }
