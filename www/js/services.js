@@ -2,6 +2,7 @@ angular.module('starter.services', ['ionic'])
 
 .service('deviceService', function($rootScope) {
   
+  var deviceId = 0;
   var myDevices = [];
 
   // SHOULD GET FROM SERVER
@@ -31,12 +32,19 @@ angular.module('starter.services', ['ionic'])
   }
 
   this.addDevice = function(deviceIndex) {
-    var d = devices[deviceIndex];
-    myDevices.push(devices[deviceIndex]);    
+    var d = {
+      id: deviceId,
+      type:devices[deviceIndex]
+    };
+    myDevices.push(d);
     //alert('myDevices = '+JSON.stringify(myDevices));
+    deviceId++;
   }
   this.getMyDevices = function() {
     return myDevices;
+  }
+  this.rmMyDevice = function(myDeviceIndex) {
+    myDevices.splice(myDeviceIndex, 1);
   }
   
   this.getComps = function() {

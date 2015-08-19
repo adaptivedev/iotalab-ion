@@ -1,9 +1,9 @@
-<div class="fadeIn">
-  <div class="card">
-    <ion-list>
+<ion-list>
+  <div class="fadeIn">
+    <div class="card">
       <ion-item ng-repeat="item in myDevices">
-        <button ng-click="addComps($index);">+</button> {{item}}
+        <button ng-click="rmDevice($index);">x</button> {{item.id}} {{item.type}}
       </ion-item>
-    </ion-list>
+    </div>
   </div>
-</div>
+</ion-list>

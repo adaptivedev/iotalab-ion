@@ -32,8 +32,8 @@ angular.module('starter.directives')
       templateUrl: 'templates/il-devices.tpl.html',
       controller: function($scope) {
         $scope.myDevices = deviceService.getMyDevices();
-        $scope.rmDevice = function(){
-          alert('rmDevice');
+        $scope.rmDevice = function(myDeviceIndex){
+          deviceService.rmMyDevice(myDeviceIndex);
         };
       }
     }
