@@ -34,7 +34,8 @@ angular.module('starter.services', ['ionic'])
   this.addDevice = function(deviceIndex) {
     var d = {
       id: deviceId,
-      type:devices[deviceIndex]
+      type:devices[deviceIndex],
+      comps: []
     };
     myDevices.push(d);
     //alert('myDevices = '+JSON.stringify(myDevices));
@@ -49,6 +50,16 @@ angular.module('starter.services', ['ionic'])
   
   this.getComps = function() {
     return comps;
+  }
+  this.addMyComp = function(compIndex, thePin, deviceIndex) {
+    var c = {
+      id: compIndex,
+      pin: thePin,
+      type:comps[compIndex]
+    };
+    //TODO: COMP SHOULD BE PER DEVICE
+    myDevices[deviceIndex].comps.push(c);
+    //alert('myDevices = '+JSON.stringify(myDevices));
   }
   
 })
