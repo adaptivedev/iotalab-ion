@@ -1,4 +1,49 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ionic'])
+
+.service('deviceService', function($rootScope) {
+  
+  var myDevices = [];
+
+  // SHOULD GET FROM SERVER
+  var devices = [
+    'Arduino', 
+    'Raspberry Pi 2', 
+    'Edison'
+  ];
+  
+  // SHOULD KNOW WHICH DEVICES CAN CONNECT TO AND WHEN
+  var comps = [
+    'WiFi', 
+    'BlueTooth', 
+    'GPS',
+    'Camera',
+    'Motion',
+    'Distance (Sonar)',
+    'Distance (Lidar)',
+    'Temperatur',
+    'Touchpad',
+  ];
+
+  var self = this;
+
+  this.getDevices = function() {
+    return devices;
+  }
+
+  this.addDevice = function(deviceIndex) {
+    var d = devices[deviceIndex];
+    myDevices.push(devices[deviceIndex]);    
+    //alert('myDevices = '+JSON.stringify(myDevices));
+  }
+  this.getMyDevices = function() {
+    return myDevices;
+  }
+  
+  this.getComps = function() {
+    return comps;
+  }
+  
+})
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array

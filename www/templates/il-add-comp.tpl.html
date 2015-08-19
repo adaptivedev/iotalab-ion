@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="item item-divider">
+    {{device}}
+  </div>
+  <div class="item item-text-wrap">
+    <ion-item ng-repeat="item in comps">
+      <il-add-comp ng-onclick="addComp();">+</il-add-comp> {{item}}
+    </ion-item>
+  </div>
+</div>

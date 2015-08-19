@@ -1,21 +1,6 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
-  $scope.devices = ['Arduino', 'Raspberry Pi 2', 'Edison'];
-  $scope.comps = [
-    'WiFi', 
-    'BlueTooth', 
-    'GPS',
-    'Camera',
-    'Motion',
-    'Distance (Sonar)',
-    'Distance (Lidar)',
-    'Temperatur',
-    'Touchpad',
-  ];
-  $scope.addDevice = function(){
-    alert('addDevice');
-  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

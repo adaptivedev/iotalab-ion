@@ -6,23 +6,10 @@
           <div class="item item-divider">
             Add Devices
           </div>
-          <ion-list>
-          <ion-item ng-repeat="item in devices">
-            <button ng-onclick="addDevice();">+</button> {{item}}
-          </ion-item>
-          </ion-list>
+          <il-add-devices></il-add-devices>
         </div>
       </div>
-      <div class="card">
-          <div class="item item-divider">
-            Arduino
-          </div>
-        <div class="item item-text-wrap">
-          <ion-item ng-repeat="item in comps">
-            <button ng-onclick="addDevice();">+</button> {{item}}
-          </ion-item>
-        </div>
-      </div>
+      <il-devices></il-devices>
     </div>
   </ion-content>
 </ion-view>
