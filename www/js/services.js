@@ -37,7 +37,7 @@ angular.module('starter.services', ['ionic'])
       type:devices[deviceIndex],
       comps: []
     };
-    myDevices.push(d);
+    myDevices.unshift(d);
     //alert('myDevices = '+JSON.stringify(myDevices));
     deviceId++;
   }
