@@ -2,7 +2,19 @@ angular.module('starter.directives', []);
 
 angular.module('starter.directives')
 
-.directive('ilAddDevices', function(deviceService) {
+.directive('ilMobileApp', function(deviceService) {
+    return {
+      restrict: 'EA',
+      templateUrl: 'templates/il-mobile-app.tpl.html',
+      controller: function($scope) {
+        $scope.myDevices = deviceService.getMyDevices();
+        $scope.addDevice = function(deviceIndex){
+          deviceService.addDevice(deviceIndex);
+        };
+      }
+    }
+  })
+  .directive('ilAddDevices', function(deviceService) {
     return {
       restrict: 'EA',
       templateUrl: 'templates/il-add-devices.tpl.html',

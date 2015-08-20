@@ -1,0 +1,14 @@
+<div class="card" style="float:right; min-width:320px; max-height:640px;">
+  <div class="item item-text-wrap">
+    <div class="item item-divider">
+      Mobile App - Manage IoT System
+    </div>
+    <ion-item ng-repeat="item in myDevices">
+      <il-add-comp ng-onclick="rmDevice($index);">+</il-add-comp> 
+        {{item.id}} {{item.type}}
+        <ion-item ng-repeat="comp in item.comps">
+          {{comp}}
+        </ion-item>
+    </ion-item>
+  </div>
+</div>
